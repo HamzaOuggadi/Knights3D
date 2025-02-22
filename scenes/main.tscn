@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckypjw4e1kyss"]
+[gd_scene load_steps=7 format=3 uid="uid://ckypjw4e1kyss"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_eufnd"]
+[ext_resource type="PackedScene" uid="uid://cipifa7xkko83" path="res://scenes/chest.tscn" id="2_26eri"]
+[ext_resource type="PackedScene" uid="uid://cpccqf4royesh" path="res://scenes/barrel.tscn" id="3_x67x8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cw8c3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -93,5 +97,18 @@ size = Vector3(1, 2.1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 2.2, 1)
 height = 4.4
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 8, 18.4)
+[node name="ProtoController" parent="." instance=ExtResource("1_eufnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17403, -4.76837e-07, 7.31583)
+can_sprint = true
+can_freefly = true
+input_left = "moveLeft"
+input_right = "moveRight"
+input_forward = "moveUp"
+input_back = "moveDown"
+input_jump = "jump"
+
+[node name="Chest" parent="." instance=ExtResource("2_26eri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24745, 0, 3.34157)
+
+[node name="Barrel" parent="." instance=ExtResource("3_x67x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06693, 0.0459027, 2.60105)
