@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bynh7y1v5vt4m"]
+
+[ext_resource type="PackedScene" uid="uid://btk6mlnhgdobp" path="res://assets/models/dungeon_assets/building/wall_archedwindow_gated.glb" id="1_58kh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ti34w"]
+size = Vector3(4, 4, 1)
+
+[node name="WallArchedWindowGate" type="StaticBody3D"]
+
+[node name="wall_archedwindow_gated" parent="." instance=ExtResource("1_58kh1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ti34w")
